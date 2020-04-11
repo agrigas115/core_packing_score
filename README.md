@@ -13,3 +13,8 @@ Requirments to run code
 - Reduce
 - Naccess
 - Pomelo
+
+Python Modules
+- Numpy
+- Biopython
+- Tensorflow
