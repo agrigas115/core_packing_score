@@ -9,7 +9,7 @@ This method will first calculate the relative Solvent Accessibile Surface Area o
 Requirments to run code
 
 - Python 3
-- Matlab
+- Matlab w/ Bioinformatics Toolbox
 - Reduce
 - Naccess
 - Pomelo
