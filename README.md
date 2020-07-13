@@ -17,4 +17,5 @@ Requirments to run code
 Python Modules
 - Numpy
 - Biopython
+- Scipy
 - Tensorflow
