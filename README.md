@@ -45,10 +45,12 @@ See: https://github.com/spatialfruitsalad/pomelo
 
 # Usage
 This code will calculate the following for an input PDB structure:
--relative Solvent Accessible Surface Area (rSASA)
--residue packing fraction
--residue overlap energy
--Kullback-Liebler Divergence of the hydrophobic packing fraction
+
+- relative Solvent Accessible Surface Area (rSASA)
+- residue packing fraction
+- residue overlap energy
+- Kullback-Liebler Divergence of the hydrophobic packing fraction
+
 It will save this information for you and then predict the Global Distance Test score of the structure.
 ```
 python run_core_packing_decoy_detector.py -i abcd.pdb
