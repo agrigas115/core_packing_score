@@ -19,3 +19,14 @@ Python Modules
 - Biopython
 - Scipy
 - Tensorflow
+
+# Installation
+
+## Matlab
+This method calls Matlab from Python. In order to do this, you need to first the Matlab Engine API for Python. From the Matlab command window, type:
+'''
+cd (fullfile(matlabroot,'extern','engines','python'))
+system('python setup.py install')
+'''
+This can also be accomplished by navigating to the Matlab root folder on the commandline and entering 'python setup.py install'
+See: https://www.mathworks.com/help/matlab/matlab_external/install-the-matlab-engine-for-python.html
