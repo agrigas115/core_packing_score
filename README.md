@@ -55,3 +55,4 @@ It will save this information for you and then predict the Global Distance Test 
 ```
 python run_core_packing_decoy_detector.py -i abcd.pdb
 ```
+All of the results will be saved to the output directory.
