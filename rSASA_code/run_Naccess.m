@@ -30,13 +30,15 @@ all_ids = cell2mat(tempModel2(:,6));
 each_res_data = zeros(size(res_ids,1), 4);
 each_res_data(:,1) = res_ids;
 
+tempdir = strcat(pdb_name,'_tempdir');
 
+mkdir([tempdir]);
 
 %% Run full protein through naccess
 dipept = tempModel2;
 
 %Save protein to PDB file
-f = fopen('this_protein.pdb', 'w');
+f = fopen(strcat(tempdir,'/this_protein.pdb'), 'w');
 for j = 1:size(dipept,1)
     if size(dipept{j,2},2)<4
         fprintf(f,( '%-6s%5d  %-3s%4s %s%4d%s    %8.3f%8.3f%8.3f%6.2f%6.2f          %2s\n'), 'ATOM', j, dipept{j,2}, dipept{j,4}, ' ', dipept{j,6}, '', dipept{j,8}, dipept{j,9}, dipept{j,10}, dipept{j,11}, dipept{j,12}, dipept{j,14});
@@ -47,12 +49,14 @@ end
 fclose(f);
 
 %Run naccess
-x = strcat('./naccess ',{' '}, 'this_protein.pdb -r vdw.radii_jennifer -p 1.4 -y  -z 0.001 > test.out');
-x
+cd([tempdir]);
+x = strcat('../naccess ',{' '}, 'this_protein.pdb -r ../vdw.radii_jennifer -p 1.4 -y  -z 0.001 > test.out');
+
 system(x{:});
+cd(['../']);
 
 %Load naccess output data
-f = fopen(strcat('this_protein.asa'));
+f = fopen(strcat(tempdir,'/this_protein.asa'));
 data = textscan(f,'%s %f %s %s  %f %f %f %f %f %f');
 all_protein = data{9};
 fclose(f);
@@ -82,7 +86,7 @@ for res = 1:size(res_ids,1)
     dipept(:,1) = num2cell([1:size(dipept,1)]);
     
     %Write dipeptide to file
-    f = fopen('this_dipept.pdb', 'w');
+    f = fopen(strcat(tempdir,'/this_dipept.pdb'), 'w');
     for j = 1:size(dipept,1)
         if size(dipept{j,2},2)<4
             fprintf(f,( '%-6s%5d  %-3s%4s %s%4d%s    %8.3f%8.3f%8.3f%6.2f%6.2f          %2s\n'), 'ATOM', j, dipept{j,2}, dipept{j,4}, ' ', dipept{j,6}, '', dipept{j,8}, dipept{j,9}, dipept{j,10}, dipept{j,11}, dipept{j,12}, dipept{j,14});
@@ -93,11 +97,13 @@ for res = 1:size(res_ids,1)
     fclose(f);
     
     %Run Naccess
-    x = strcat('./naccess ',{' '}, 'this_dipept.pdb -r vdw.radii_jennifer -p 1.4 -y  -z 0.01 > test.out');
+    cd([tempdir]);
+    x = strcat('../naccess ',{' '}, 'this_dipept.pdb -r ../vdw.radii_jennifer -p 1.4 -y  -z 0.01 > test.out');
     system(x{:});
+    cd(['../']);
     
     %Load Naccess output and save SASA data
-    f = fopen(strcat('this_dipept.asa'));
+    f = fopen(strcat(tempdir,'/this_dipept.asa'));
     data = textscan(f,'%s %f %s %s %f %f %f %f %f %f');
     all_new = data{9};
     ind0 = ismember(cell2mat(dipept(:,6)), res_ids(res));

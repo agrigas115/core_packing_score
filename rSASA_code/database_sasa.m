@@ -1,5 +1,5 @@
 %% Get sasa for dataset of pdb files
-
+function [] = database_sasa()
 clear;
 close all;
 clc;
@@ -22,6 +22,5 @@ flist = dir(fullfile([pdbdir '*_H.pdb']));
 NF = length(flist);
 
 for ff = 1:NF
-    fprintf('on pdb %s\n',flist(ff).name);
     get_single_pdb_sasa(mdir,pdbdir,flist(ff).name,savedir);
 end

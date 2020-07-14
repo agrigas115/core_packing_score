@@ -16,8 +16,6 @@ tempModel2 = reshape(tempModel1, size(tempModel1,1), size(tempModel1,3))';
 save([mdir pdb_name '.mat'],'tempModel2');
 
 % run naccess
-fprintf('Running function run_Naccess on protein...');
 run_Naccess(mdir, pdb_name, savedir);
-fprintf('function completed.\n');
 
 end
