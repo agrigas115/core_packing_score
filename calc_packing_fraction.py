@@ -14,7 +14,7 @@ parser.add_argument('-i', '--input', help='input pdb_file', required=True)
 args = parser.parse_args()
 
 decoy_name = args.input
-vol_txt = './'+decoy_name+'1_vol.txt'
+vol_txt = './'+decoy_name+'1;_vol.txt'
 #volume data file names
 vor_txt = './voro_code/'+decoy_name+'_vor.txt'
 #voronoi volume data file names
