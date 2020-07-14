@@ -43,6 +43,17 @@ See: http://wolf.bms.umist.ac.uk/naccess/
 Pomelo calculates the Voronoi volumes of the residues using the surface Voronoi Tessellation. Make sure to compile Pomelo in the 'Generic' mode, as this is what allows Pomelo to use generic surface triangulations as the input defining the surface of the particles.
 See: https://github.com/spatialfruitsalad/pomelo
 
+## Volume Estimation
+In the vol_code directory is 'grid_method_packing_fraction.cxx'. To compile:
+```
+g++ grid_method_packing_fraction.cxx -o vol
+```
+If you don't have it already, you can install GCC by:
+```
+brew install gcc
+```
+If you, like me, use anaconda, Hombrew and Anaconda don't always get along. If you have trouble calling g++, try temproarily changing you PATH, see: https://hashrocket.com/blog/posts/keep-anaconda-from-constricting-your-homebrew-installs
+
 # Usage
 This code will calculate the following for an input PDB structure:
 
