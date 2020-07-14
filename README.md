@@ -40,6 +40,8 @@ Naccess calculates the solvent accessible surface area of proteins. Please insta
 See: http://wolf.bms.umist.ac.uk/naccess/
 
 ## Pomelo
+Pomelo calculates the Voronoi volumes of the residues using the surface Voronoi Tessellation.
+See: https://github.com/spatialfruitsalad/pomelo
 
 # Usage
 This code will calculate the following for an input PDB structure:
