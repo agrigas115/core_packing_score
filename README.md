@@ -40,7 +40,7 @@ Naccess calculates the solvent accessible surface area of proteins. Please insta
 See: http://wolf.bms.umist.ac.uk/naccess/
 
 ## Pomelo
-Pomelo calculates the Voronoi volumes of the residues using the surface Voronoi Tessellation.
+Pomelo calculates the Voronoi volumes of the residues using the surface Voronoi Tessellation. Make sure to compile Pomelo in the 'Generic' mode, as this is what allows Pomelo to use generic surface triangulations as the input defining the surface of the particles.
 See: https://github.com/spatialfruitsalad/pomelo
 
 # Usage
