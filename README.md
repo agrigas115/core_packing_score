@@ -1,5 +1,5 @@
 # Core Packing Score
-Implementation of the core packing score published here: https://arxiv.org/abs/2001.01161
+Implementation of the core packing score published here: https://onlinelibrary.wiley.com/doi/full/10.1002/pro.3914
 
 Contact me with any questions: alex.grigas@yale.edu
 
